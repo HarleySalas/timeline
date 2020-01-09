@@ -1,8 +1,23 @@
 const { catchAsync } = require("../../utils");
+const getTradeApiStockHistory = require("./services/getTradeApiStockHistory");
 const action = {};
 
+/**
+ * @param {obj} req - req.body should contain the following values:
+ * {
+ *  name: {string},
+ *  date: {date},
+ *  investment: {number}
+ *  stocks: {array} [
+ *    {
+ *      stock: {string (stock symbol)}, percentage: {number}
+ *    }
+ *    ...
+ *  ]
+ * }
+ */
 action.postHistory = catchAsync(async (req, res, next) => {
-  console.log(req.body);
+  await getTradeApiStockHistory(req, next);
 
   res.status(201).json({
     status: "success",
