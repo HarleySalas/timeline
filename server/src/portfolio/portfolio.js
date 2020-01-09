@@ -1,5 +1,6 @@
 const { catchAsync } = require("../../utils");
 const getTradeApiStockHistory = require("./services/getTradeApiStockHistory");
+const aggregatePortfolioData = require("./services/aggregatePortfolioData.js");
 const action = {};
 
 /**
@@ -17,7 +18,10 @@ const action = {};
  * }
  */
 action.postHistory = catchAsync(async (req, res, next) => {
+  //attach API response to req.startQuery and req.endQuery
   await getTradeApiStockHistory(req, next);
+  //aggregate the API response data with req.body to save in db
+  const aggData = await aggregatePortfolioData(req, next);
 
   res.status(201).json({
     status: "success",
