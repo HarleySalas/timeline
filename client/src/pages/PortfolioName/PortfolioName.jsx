@@ -35,7 +35,7 @@ const PortfolioName = () => {
     }
   }, [initialLoad, handleBlur]);
   return (
-    <div className="page">
+    <div>
       <PortfolioContainer>
         <h3 className="portfolio-name__heading">What's your name?</h3>
         <form onSubmit={handleSubmit} className="portfolio-name__form">
