@@ -1,0 +1,63 @@
+@import "../../styles/variables.scss";
+
+.portfolio-date {
+  &__heading {
+    margin-bottom: 7rem;
+    opacity: 0;
+    animation: fadeUp 0.72s $ease forwards;
+  }
+
+  &__wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    opacity: 0;
+    animation: fadeUp 0.72s $ease forwards 0.24s;
+  }
+
+  &__select-wrapper {
+    display: flex;
+    margin-bottom: 5rem;
+
+    select {
+      display: inline-block;
+      font-size: 2rem;
+      color: $color-black;
+      border: 1px solid $color-grey-light;
+      width: 17rem;
+      background: $color-white-light;
+      cursor: pointer;
+
+      &:focus {
+        outline: none;
+      }
+
+      option {
+        &:focus {
+          outline: none;
+        }
+      }
+    }
+
+    label {
+      display: none;
+    }
+
+    #year {
+      margin-right: 3rem;
+    }
+
+    #month {
+      margin-right: 3rem;
+    }
+  }
+
+  &__error {
+    position: absolute;
+    top: -4rem;
+    color: $color-primary;
+    opacity: 0;
+    animation: fadeUp 0.72s $ease forwards;
+  }
+}
