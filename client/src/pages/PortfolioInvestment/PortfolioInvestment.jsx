@@ -29,7 +29,7 @@ const PortfolioInvestment = () => {
     if (!portfolio.date) {
       history.push("/portfolio/date");
     }
-  }, []);
+  }, [history, portfolio.date]);
 
   useEffect(() => {
     if (initialLoad) {

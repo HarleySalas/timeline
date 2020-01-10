@@ -37,7 +37,7 @@ const PortfolioPercentages = () => {
     if (!portfolio.stocks) {
       history.push("/portfolio/stocks");
     }
-  }, []);
+  }, [history, portfolio.stocks]);
 
   //Validate that total percentage is 100%
   useEffect(() => {

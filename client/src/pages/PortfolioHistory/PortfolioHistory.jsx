@@ -24,7 +24,7 @@ const PortfolioHistory = props => {
         setError(err.message);
         setLoading(false);
       });
-  }, []);
+  }, [props.match.params.id]);
 
   //Create string from Portfolio History data to be written in component
   //ex output "$10,000 in AMZN, and $15,000 in AAPL"

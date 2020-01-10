@@ -32,7 +32,7 @@ const PortfolioStocks = () => {
     if (!portfolio.investment) {
       history.push("/portfolio/investment");
     }
-  }, []);
+  }, [history, portfolio.investment]);
 
   useEffect(() => {
     if (initialLoad) {

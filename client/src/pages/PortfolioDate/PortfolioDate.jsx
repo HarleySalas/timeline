@@ -47,7 +47,7 @@ const PortfolioDate = () => {
     } else if (!isWeekend && error) {
       setError(false);
     }
-  }, [date.value]);
+  }, [date.value, error]);
 
   const submit = () => {
     if (validDate) {
