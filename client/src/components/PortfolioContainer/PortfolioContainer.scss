@@ -9,4 +9,29 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
+
+  &__back {
+    position: absolute;
+    top: 0;
+    left: 0rem;
+    font-size: 1.8rem;
+    border: none;
+    border-bottom: 1px solid $color-black;
+    padding-bottom: 0.2rem;
+    background-color: transparent;
+    transition: all 0.24s $ease;
+    cursor: pointer;
+
+    &:hover {
+      color: $color-primary;
+    }
+
+    &:focus {
+      outline: none;
+    }
+
+    @media screen and(min-width: 1500px) {
+      left: 0;
+    }
+  }
 }
