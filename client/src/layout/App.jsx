@@ -8,6 +8,7 @@ import Navbar from "./Navbar/Navbar";
 import HomePage from "../pages/HomePage/HomePage";
 import PortfolioName from "../pages/PortfolioName/PortfolioName";
 import PortfolioDate from "../pages/PortfolioDate/PortfolioDate";
+import PortfolioInvestment from "../pages/PortfolioInvestment/PortfolioInvestment";
 
 const App = () => {
   return (
@@ -18,6 +19,7 @@ const App = () => {
           <Route exact path="/" component={HomePage} />
           <Route exact path="/portfolio/name" component={PortfolioName} />
           <Route exact path="/portfolio/date" component={PortfolioDate} />
+          <Route exact path="/portfolio/investment" component={PortfolioInvestment} />
         </Switch>
       </div>
     </PortfolioProvider>
