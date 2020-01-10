@@ -1,0 +1,12 @@
+@import "../../styles/variables.scss";
+
+.portfolio-container {
+  position: relative;
+  min-height: 60vh;
+  padding: 7rem 3rem;
+  margin-top: 11rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
