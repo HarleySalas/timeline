@@ -1,0 +1,49 @@
+@import "../../styles/variables.scss";
+
+.button {
+  display: block;
+  border: none;
+  font-weight: 600;
+  text-transform: uppercase;
+  cursor: pointer;
+
+  &:focus {
+    outline: none;
+  }
+
+  &--primary {
+    color: $color-white;
+    background-color: $color-primary;
+
+    &.disabled {
+      background-color: $color-primary-dark;
+      color: $color-white;
+      cursor: not-allowed;
+    }
+  }
+
+  &--white {
+    color: $color-primary;
+    background-color: $color-white;
+  }
+
+  &--md {
+    font-size: 1.4rem;
+    letter-spacing: 0.11rem;
+    padding: 1.3rem 1.5rem;
+
+    @media screen and(min-width: 500px) {
+      font-size: 1.5rem;
+      padding: 1.5rem 1.7rem;
+    }
+
+    @media screen and(min-width: 900px) {
+      font-size: 1.6rem;
+      padding: 1.6rem 1.8rem;
+    }
+  }
+
+  &--rounded {
+    border-radius: 10rem;
+  }
+}
