@@ -72,15 +72,15 @@ const PortfolioPercentages = () => {
     };
 
     if (validPercentage) {
-      setLoading(true);
-      try {
-        let response = await axios.post("http://localhost:3001/api/v1/portfolio/history", data);
-        setLoading(false);
-        history.push(`/portfolio/history/${response.data.portfolioId}`);
-      } catch (e) {
-        setLoading(false);
-        setErrMsg(e);
-      }
+      await axios
+        .post("http://localhost:3001/api/v1/portfolio/history", data)
+        .then(response => {
+          history.push(`/portfolio/history/${response.data.portfolioId}`);
+        })
+        .catch(e => {
+          setLoading(false);
+          setErrMsg(e);
+        });
     }
   };
 
@@ -92,7 +92,7 @@ const PortfolioPercentages = () => {
           <div className="portfolio-percentages__loading"></div>
         ) : (
           <form onSubmit={handleSubmit} className="portfolio-percentages__form">
-            {errMsg && <span className="portfolio-percentages__error">{errMsg}</span>}
+            {errMsg && <span className="portfolio-percentages__error">{errMsg.message}</span>}
             {error && <span className="portfolio-percentages__error">You exceeded 100% and the value of your last input was reduced.</span>}
 
             {stockData.map((data, index) => (
@@ -106,7 +106,6 @@ const PortfolioPercentages = () => {
                   value={data.percentage}
                   index={index}
                   onChange={event => handleChange(event, index)}
-                  onClick={() => console.log({ data })}
                 />
               </div>
             ))}
