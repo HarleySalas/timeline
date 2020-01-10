@@ -15,18 +15,17 @@ const compareKeys = (a, b) => {
 
 const aggregatePortfolioData = (req, next) => {
   return new Promise((resolve, reject) => {
-    startData = req.startQuery;
-    endData = req.endQuery;
-
     //ensure sure both datsets have data from api
-    if (!start.data || !endData.data) {
+    if (!req.startQuery.data || !req.endQuery.data) {
       reject(next(new AppError("No stock symbols were found matching your request.", 404)));
     }
-
     //ensure that startData and endData keys match
-    if (!compareKeys(startData.data, endData.data)) {
+    if (!compareKeys(req.startQuery.data, req.endQuery.data)) {
       reject(next(new AppError("One or more stocks entered did not exist on your start date.", 404)));
     }
+
+    let startData = req.startQuery;
+    let endData = req.endQuery;
 
     //sort stocks from req.body.stocks, to match API response order (ASC)
     let sortedBodyStocks = req.body.stocks.sort((a, b) => {
