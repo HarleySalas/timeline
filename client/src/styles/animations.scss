@@ -9,3 +9,9 @@
     transform: translateY(0);
   }
 }
+
+@keyframes spin360 {
+  100% {
+    transform: rotate(360deg);
+  }
+}
