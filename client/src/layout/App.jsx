@@ -11,6 +11,7 @@ import PortfolioDate from "../pages/PortfolioDate/PortfolioDate";
 import PortfolioInvestment from "../pages/PortfolioInvestment/PortfolioInvestment";
 import PortfolioStocks from "../pages/PortfolioStocks/PortfolioStocks";
 import PortfolioPercentages from "../pages/PortfolioPercentages/PortfolioPercentages";
+import PortfolioHistory from "../pages/PortfolioHistory/PortfolioHistory";
 
 const App = () => {
   return (
@@ -24,6 +25,7 @@ const App = () => {
           <Route exact path="/portfolio/investment" component={PortfolioInvestment} />
           <Route exact path="/portfolio/stocks" component={PortfolioStocks} />
           <Route exact path="/portfolio/percentages" component={PortfolioPercentages} />
+          <Route exact path="/portfolio/history/:id" component={PortfolioHistory} />
         </Switch>
       </div>
     </PortfolioProvider>
